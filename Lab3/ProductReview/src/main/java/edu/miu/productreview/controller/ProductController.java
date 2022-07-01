@@ -16,25 +16,24 @@ import java.util.Optional;
 public class ProductController {
     @Autowired
     private IProductService productService;
-
     @GetMapping
     public List<Product> getAllProduct() {
         return productService.getAllProduct();
     }
-
     @GetMapping("/{id}")
     public Optional<Product> getProductById(@PathVariable int id) {
         return productService.getProductById(id);
     }
-
     @PostMapping
-    public Product createProduct( @RequestBody Product review) {
-        return productService.createProduct(review);
+    public Product createProduct( @RequestBody Product product) {
+
+        return productService.createProduct(product);
     }
 
     @PutMapping
-    public Product updateProduct(@RequestBody Product review) {
-        return productService.updateProduct(review);
+    public Product updateProduct(@RequestBody Product product) {
+
+        return productService.updateProduct(product);
     }
 
     @DeleteMapping("/{id}")
